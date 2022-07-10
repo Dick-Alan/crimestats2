@@ -1,0 +1,33 @@
+.scan {
+    background-color: black;
+    color: greenyellow;
+    font-family: monospace;
+}
+.scan:hover {
+    background-color: darkgrey;
+}
+.popup {
+    background-color: #00000040;
+    color: green;
+    
+}
+
+.popup .leaflet-popup-content-wrapper {
+    background:#000000d0;
+    color:greenyellow;
+    font-size:16px;
+    line-height:24px;
+    font-family: monospace;
+    }
+  .popup .leaflet-popup-content-wrapper a {
+    color:#000000;
+    }
+.statgrid {
+    grid-template-columns: 1;
+}
+
+.showme { 
+   position: absolute;
+   margin-bottom: 10vh ;
+   font-size: 5px;
+}
