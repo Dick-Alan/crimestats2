@@ -45,7 +45,7 @@ const GetCoords = (props) => {
 
         const callApi  = axios.create({
             baseURL: 'https://ukpolicedata.p.rapidapi.com',
-            params: { lat: coords[0], lng: coords[1]},
+            params: { lat: coords[0], lng: coords[1], rad: 10000},
             headers: {
               'X-RapidAPI-Key': 'c838eb78camsh91d46c9d96dac27p192e90jsnc7f5490ea021',
               'X-RapidAPI-Host': 'ukpolicedata.p.rapidapi.com'
