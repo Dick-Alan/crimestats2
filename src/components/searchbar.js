@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
                    
                 <form onSubmit={this.onFormSubmit}>
                     <div className="field">
-                        <label > Lookup Region: </label>
+                        <label > Search Address: </label>
                         <input 
                             type="text" 
                             value={this.state.term}

@@ -57,7 +57,7 @@ const Map = (props)=> {
             const map = useMapEvent('keydown',() => {
                 if (moving === true) {
                    
-                    map.setView(view, 12)
+                    map.setView(view, 15)
                     console.log(props.viewposition)
                     setMoving(!moving)
                     
