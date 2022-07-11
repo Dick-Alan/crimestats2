@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, useMapEvent } from 'react-leaflet';
 import SearchBar from './searchbar';
-import data from './data.json';
+
 import GetCoords from './GetCoords';
+import axios from 'axios';
 
 
 
@@ -14,22 +15,37 @@ const Map = (props)=> {
     const [moving, setMoving] = useState(false)
     
     
-    const onSearchSubmit = (term) => {
-        const dest = []
+    const onSearchSubmit = async (term) => {
+
+        
+
+
         setMoving(true)
-        data.map((e) => {
-            if (term.toLowerCase() === e.city.toLowerCase()) {
-                dest.push(e.city, e.lat, e.lng)
-                setView([e.lat, e.lng])
-                console.log(`moved to ${dest[0]} ${dest[1]} ${dest[2]}`)
+       
+
+            const callApi  = axios.create({
+                baseURL: 'https://api.geoapify.com/v1/geocode/search',
+                params: {apiKey: '519a81ae8a974952a09169ad20fc1183', text: term},
+                headers: {
+
+                  
+                }
                 
+            
                 
-               
-               
-            }
-            return null
-         
-        });
+              });
+              
+              
+
+              const response = callApi.get();
+              console.log('sent')
+              console.log((await response).data.features[0].geometry.coordinates)
+              setView({ lat : (await response).data.features[0].geometry.coordinates[1],
+                 lng: (await response).data.features[0].geometry.coordinates[0]})
+              console.log((await response).error)
+              console.log('recieved')
+            
+
         
         
 
@@ -40,6 +56,7 @@ const Map = (props)=> {
         function GoToPoint() {
             const map = useMapEvent('keydown',() => {
                 if (moving === true) {
+                   
                     map.setView(view, 12)
                     console.log(props.viewposition)
                     setMoving(!moving)

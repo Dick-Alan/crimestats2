@@ -4,12 +4,14 @@ import Map from './Map';
 import './Markers.css'
 
 
+
 class App extends React.Component {
     state =  {viewposition: [52.5072, -1.1275], city: '', showGraph: true, showLegend: true }
     render() {
           
         return (
             <div>
+           
                 <h2 style={{color: 'black'}}> UK CRIME DATA SCANNER</h2>
                 <Map showgraph={this.state.showGraph} showlegend={this.state.showLegend} viewposition={this.state.viewposition}></Map>
                 <h6 className="resources"> Resources:
