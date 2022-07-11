@@ -11,6 +11,10 @@ const Stats = (props) => {
     var robbery = []
     var burglary = []
     var weapons = []
+    var shoplifting = []
+    var publicorder = []
+    var vehicle = []
+    var damage = []
     var other = []
     const stats = props.crimes.map((crime) => {
       
@@ -24,7 +28,7 @@ const Stats = (props) => {
         if (crime.category === 'drugs') {
            drugcount.push(crime)
         }
-        if (crime.category === 'theft' || crime.category === 'theft-from-the-person' || crime.category === 'bicicyle-theft' || crime.category === 'other-theft') {
+        if (crime.category === 'theft' || crime.category === 'theft-from-the-person' || crime.category === 'bicycle-theft' || crime.category === 'other-theft') {
             theft.push(crime)
          }
          if (crime.category === 'robbery') {
@@ -39,7 +43,25 @@ const Stats = (props) => {
          if (crime.category === 'other-crime') {
             drugcount.push(crime)
          }
-    
+         if (crime.category === 'shoplifting') {
+            shoplifting.push(crime)
+         }
+         if (crime.category === 'public-order') {
+            publicorder.push(crime)
+         }
+         if (crime.category === 'vehicle-crime') {
+            vehicle.push(crime)
+         }
+         if (crime.category === 'criminal-damage-arson') {
+            damage.push(crime)
+         }
+         if (crime.category === 'other-crime') {
+            other.push(crime)
+         }
+         
+         
+         
+         
 
         
     })
@@ -53,10 +75,13 @@ const Stats = (props) => {
                     {drugcount.length} drug crimes.
                 </li>
                 <li style={{color: 'pink'}}>
-                    {antisocial.length} antisocial crimes.
+                    {antisocial.length} antisocial behaviours.
                 </li>
                 <li style={{color: 'orange'}}>
                     {theft.length} thefts.
+                </li>
+                <li style={{color: 'brown'}}>
+                    {shoplifting.length} shopliftings.
                 </li>
                 <li style={{color: 'magenta'}}>
                     {robbery.length} robberies.
@@ -65,7 +90,19 @@ const Stats = (props) => {
                     {burglary.length} burglaries.
                 </li>
                 <li style={{color: 'yellow'}}>
-                    {weapons.length} weapons possession.
+                    {weapons.length} weapons possessions.
+                </li>
+                <li style={{color: 'grey'}}>
+                    {publicorder.length} public orders.
+                </li>
+                <li style={{color: 'purple'}}>
+                    {publicorder.length} vehicle crimes.
+                </li>
+                <li style={{color: 'violet'}}>
+                    {damage.length} criminal damage/arson.
+                </li>
+                <li style={{color: 'white'}}>
+                    {other.length} others.
                 </li>
             </div>              
         </div>
