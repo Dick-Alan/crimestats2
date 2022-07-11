@@ -27,6 +27,7 @@ const Map = (props)=> {
                
                
             }
+            return null
          
         });
         

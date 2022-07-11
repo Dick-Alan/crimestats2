@@ -1,5 +1,5 @@
 import React from 'react';
-import { Marker, Popup, Circle } from 'react-leaflet';
+import { Popup, Circle } from 'react-leaflet';
 import './Markers.css'
 
 
