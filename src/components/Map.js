@@ -57,7 +57,7 @@ const Map = (props)=> {
             
           
             <MapContainer id="map"
-                                    style={{ width: '95vw', height: '95vh', theme: 'dark'}}
+                                    style={{ width: '95vw', height: '90vh', theme: 'dark'}}
                                     center={props.viewposition} 
                                     zoom={6}
                                     zoomControl={false}

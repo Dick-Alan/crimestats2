@@ -5,14 +5,15 @@ import axios from 'axios'
 import Stats from './Stats';
 
 
+
 import './Markers.css';
 
 
 
-const GetCoords = () => {
+const GetCoords = (props) => {
     const [coords, setCoords] = useState([0, 0])
     const [crimes, setCrimes] = useState([])
-    const [scanned, setScanned] = useState(true)
+    const [scanned, setScanned] = useState(false)
     
     
     const MapEvents = () => {
@@ -57,8 +58,9 @@ const GetCoords = () => {
           // console.log(this.state.message, this.state.count, ' times')
           const response = callApi.get('/crimes-street/all-crime');
           setCrimes((await response).data)
+          console.log(crimes)
           setScanned(true)
-          console.log(crimes)  
+          
 
     }
 
@@ -67,7 +69,8 @@ const GetCoords = () => {
             return (
                 <div className="stats">
                     <div style={{color: 'white'}}> Total crimes: {crimes.length}</div>
-                    <Stats crimes={crimes}/>
+                    <Stats showlegend={props.showlegend} crimes={crimes}/>
+                    
                 
 
                 </div>
@@ -133,9 +136,12 @@ const GetCoords = () => {
             <ScanButton></ScanButton>
             
             
+            <ShowStats></ShowStats>
             
         </Circle>
-        <ShowStats></ShowStats>
+        
+       
+        
         <ShowMarks></ShowMarks>
        
         

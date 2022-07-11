@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PieChart from './PieChart';
 import './Markers.css'
 
 const Stats = (props) => {
@@ -66,8 +67,8 @@ const Stats = (props) => {
         
     })
     return (
-        <div style={{fontSize: '10px'}}>     
-            <div >
+        <div className="statscontainer">     
+            {/* <div >
                 <li style={{color: 'red'}}>
                     {violentcount.length} violent crimes.
                 </li>
@@ -104,7 +105,27 @@ const Stats = (props) => {
                 <li style={{color: 'white'}}>
                     {other.length} others.
                 </li>
-            </div>              
+                
+                
+                
+            </div>      */}
+            <PieChart 
+                 violentcount = {violentcount.length}
+                 drugcount = {drugcount.length}
+                 antisocial = {antisocial.length}
+                 theft = {theft.length}
+                 robbery = {robbery.length}
+                 burglary = {burglary.length}
+                 weapons = {weapons.length}
+                 shoplifting = {shoplifting.length}
+                 publicorder = {publicorder.length}
+                 vehicle = {vehicle.length}
+                 damage = {damage.length}
+                 other = {other.length}
+                
+                
+                />
+                    
         </div>
     )
 

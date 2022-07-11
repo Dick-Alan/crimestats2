@@ -5,14 +5,17 @@ import './Markers.css'
 
 const Marks = (props) => {
     
+
+
    
     const crimes = props.crimes.map((crime) => {
-         var color = 'white'
+         var color = '#ffffff30'
+         var status = 'not provided'
         if (crime.category === 'violent-crime') {
             color = 'red'
         }
         if (crime.category === 'anti-social-behaviour') {
-            color = 'pink'
+            color = 'purple'
         }
         if (crime.category === 'drugs') {
             color = 'greenyellow'
@@ -24,11 +27,21 @@ const Marks = (props) => {
             color = 'magenta'
         }
         if (crime.category === 'burglary') {
-            color = 'cyan'
+            color = 'pink'
         }
         if (crime.category === 'possession-of-weapons') {
-            color = 'yellow'
+            color = 'cyan'
         }
+        if (crime.category === 'criminal-damage-arson') {
+            color = 'brown'
+        }
+        if (crime.category === 'vehicle-crime') {
+            color = 'pink'
+        }
+        if (crime.outcome_status !== null) {
+            status = crime.outcome_status.category
+        }
+        
         
         return (
             <Circle 
@@ -61,6 +74,7 @@ const Marks = (props) => {
                         Month: {crime.month} <br />
                         Latitude: {crime.location.latitude} <br />
                         Longitude: {crime.location.longitude} <br />
+                        Status: {status}
                         
                 </Popup>
             </Circle>
