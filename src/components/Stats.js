@@ -59,13 +59,14 @@ const Stats = (props) => {
          if (crime.category === 'other-crime') {
             other.push(crime)
          }
-         
-         
-         
+   
+         return null
+    
          
 
         
     })
+    console.log(stats)
     return (
         <div className="statscontainer">     
             {/* <div >
