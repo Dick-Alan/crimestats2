@@ -70,11 +70,14 @@ const Marks = (props) => {
                 
                 ></Circle>
                 <Popup className="popup">
+                    <div style={{color: 'greenyellow', fontSize: '12px', backgroundColor: '#000000d0'}}>
                         Category: {crime.category} <br />
                         Month: {crime.month} <br />
                         Latitude: {crime.location.latitude} <br />
                         Longitude: {crime.location.longitude} <br />
                         Status: {status}
+                    </div>
+                       
                         
                 </Popup>
             </Circle>

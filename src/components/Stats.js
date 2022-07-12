@@ -69,47 +69,7 @@ const Stats = (props) => {
     console.log(stats)
     return (
         <div className="statscontainer">     
-            {/* <div >
-                <li style={{color: 'red'}}>
-                    {violentcount.length} violent crimes.
-                </li>
-                <li style={{color: 'greenyellow'}}>
-                    {drugcount.length} drug crimes.
-                </li>
-                <li style={{color: 'pink'}}>
-                    {antisocial.length} antisocial behaviours.
-                </li>
-                <li style={{color: 'orange'}}>
-                    {theft.length} thefts.
-                </li>
-                <li style={{color: 'brown'}}>
-                    {shoplifting.length} shopliftings.
-                </li>
-                <li style={{color: 'magenta'}}>
-                    {robbery.length} robberies.
-                </li>
-                <li style={{color: 'cyan'}}>
-                    {burglary.length} burglaries.
-                </li>
-                <li style={{color: 'yellow'}}>
-                    {weapons.length} weapons possessions.
-                </li>
-                <li style={{color: 'grey'}}>
-                    {publicorder.length} public orders.
-                </li>
-                <li style={{color: 'purple'}}>
-                    {publicorder.length} vehicle crimes.
-                </li>
-                <li style={{color: 'violet'}}>
-                    {damage.length} criminal damage/arson.
-                </li>
-                <li style={{color: 'white'}}>
-                    {other.length} others.
-                </li>
-                
-                
-                
-            </div>      */}
+ 
             <PieChart 
                  violentcount = {violentcount.length}
                  drugcount = {drugcount.length}

@@ -2,7 +2,7 @@ import React from 'react';
 import './Markers.css'
 
 
-class SearchBar extends React.Component {
+class SearchBar  extends React.Component  {
 
     state = {term: ''};
     onFormSubmit = event => {
@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
                    
                 <form onSubmit={this.onFormSubmit}>
                     <div className="field">
-                        <label > Search Address: </label>
+                        <label style={{fontFamily: 'monospace', color: 'greenyellow'}} > Search Address or Region: </label>
                         <input 
                             type="text" 
                             value={this.state.term}

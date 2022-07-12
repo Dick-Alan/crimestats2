@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, useMapEvent } from 'react-leaflet';
 import SearchBar from './searchbar';
-
+import './Markers.css'
 import GetCoords from './GetCoords';
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const Map = (props)=> {
     
-
+    const [message, setMessage ] = useState('...')
     const [view, setView] = useState(props.viewposition)
     const [moving, setMoving] = useState(false)
     
@@ -39,11 +39,13 @@ const Map = (props)=> {
 
               const response = callApi.get();
               console.log('sent')
+              setMessage('Searching...')
               console.log((await response).data.features[0].geometry.coordinates)
               setView({ lat : (await response).data.features[0].geometry.coordinates[1],
                  lng: (await response).data.features[0].geometry.coordinates[0]})
               console.log((await response).error)
               console.log('recieved')
+              setMessage('Location Found... Hit [Any Key] to go')
             
 
         
@@ -60,6 +62,7 @@ const Map = (props)=> {
                     map.setView(view, 15)
                     console.log(props.viewposition)
                     setMoving(!moving)
+                    setMessage('...')
                     
 
 
@@ -90,9 +93,9 @@ const Map = (props)=> {
                         <GetCoords/>
                         <GoToPoint> </GoToPoint>
                         
-                            <SearchBar onSubmit={onSearchSubmit}>
-                              
-                            </SearchBar>
+                            <SearchBar onSubmit={onSearchSubmit}> </SearchBar><div className="loadingmsg">{message}</div>
+                            
+                            
                         
                         
             </MapContainer>

@@ -14,6 +14,7 @@ const GetCoords = (props) => {
     const [coords, setCoords] = useState([0, 0])
     const [crimes, setCrimes] = useState([])
     const [scanned, setScanned] = useState(false)
+    const [ message, setMessage ] = useState('...')
     
     
     const MapEvents = () => {
@@ -57,9 +58,11 @@ const GetCoords = (props) => {
           
           // console.log(this.state.message, this.state.count, ' times')
           const response = callApi.get('/crimes-street/all-crime');
+          setMessage('Scanning.. please wait...')
           setCrimes((await response).data)
           console.log(crimes)
           setScanned(true)
+          setMessage(`...`)
           
 
     }
@@ -97,7 +100,8 @@ const GetCoords = (props) => {
                 
             
                 
-                <button className="scan"  onClick={request}> SCAN </button>
+                <button className="scan"  onClick={request}> SCAN HERE </button><div className="scanmsg">{message}</div>
+                
                 
                 
             

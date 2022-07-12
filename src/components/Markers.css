@@ -1,15 +1,16 @@
 .scan {
     background-color: #00000050;
-    color: white;
+    color: greenyellow;
     font-family: monospace;
-    border-radius: 5px;
+    border-radius: 5vh;
+    border: 3px solid greenyellow
 }
 .scan:hover {
     background-color: #000000;
 }
 .popup {
     background-color: #00000070;
-    color: white;
+    color: greenyellow;
     
 }
 
@@ -91,4 +92,16 @@
     color: white;
     z-index: 999999;
 
+}
+.loadingmsg {
+    position: absolute;
+    z-index: 999;
+    color: greenyellow;
+    margin-top: 5vh;
+    background-color: #00000070;
+    font-family: monospace;
+}
+.scanmsg {
+    color: greenyellow;
+    
 }
