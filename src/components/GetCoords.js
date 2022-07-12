@@ -127,7 +127,7 @@ const GetCoords = (props) => {
             center={coords} 
             pathOptions={{ 
                 fillColor: '#ffffff50',
-                color: 'red', 
+                color: 'greenyellow', 
                 backgroundColor: 'darkgrey' }} 
             radius={1600}
             eventHandlers={{

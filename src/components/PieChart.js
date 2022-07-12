@@ -125,6 +125,13 @@ import {
             animateScale: true,
             animateRotate: true
         },
+        elements: {
+            arc: {
+                backgroundColor: 'greenyellow',
+                borderColor: 'greenyellow'
+            }
+
+        },
         
         plugins :{
             legend: {
